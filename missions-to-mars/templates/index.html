@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>   
+    table{
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      
+    table td, table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+        
+    table tr:nth-child(even){background-color: #f2f2f2;}
+
+    table tr:hover {background-color: #ddd;}
+        
+    table th{
+      background-color: #ddd;
+    }
+    figure {
+      font-size: x-large;
+    }
+
+    img {
+      width: 500px;
+      height: 500 px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+        <h5>{{mars_dict.title}}</h5>
+        <p> {{mars_dict.paragraph}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <h3>Featured Mars Image</h3>
+        <h4>Pretend there's an image of Mars here or something... </h4>
+      </div>
+      <div class="col-md-5">
+        <h3>Mars Facts</h3>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th>Measurement</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Equatorial Diameter:</td>
+              <td>6,792 km</td>
+            </tr>
+            <tr>
+              <td>Polar Diameter:</td>
+              <td>6,752 km</td>
+            </tr>
+            <tr>
+              <td>Mass:</td>
+              <td>6.39 × 10^23 kg (0.11 Earths)</td>
+            </tr>
+            <tr>
+              <td>Moons:</td>
+              <td>2 (Phobos &amp; Deimos)</td>
+            </tr>
+            <tr>
+              <td>Orbit Distance:</td>
+              <td>227,943,824 km (1.38 AU)</td>
+            </tr>
+            <tr>
+              <td>Orbit Period:</td>
+              <td>687 days (1.9 years)</td>
+            </tr>
+            <tr>
+              <td>Surface Temperature:</td>
+              <td>-87 to -5 °C</td>
+            </tr>
+            <tr>
+              <td>First Record:</td>
+              <td>2nd millennium BC</td>
+            </tr>
+            <tr>
+              <td>Recorded By:</td>
+              <td>Egyptian astronomers</td>
+            </tr>
+          </tbody>
+        </table>      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3>Mars Hemispheres</h3>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <figure class="figure">
+          <img src="{{mars_dict.hemisphere_list[0]['img_url']}}" class="figure-img img-fluid" alt="{{mars_dict.hemisphere_list[0]['title']}}">
+          <figcaption class="figure-caption text-center">{{mars_dict.hemisphere_list[0]['title']}}</figcaption>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure class="figure">
+          <img src="{{mars_dict.hemisphere_list[1]['img_url']}}" class="figure-img img-fluid" alt="{{mars_dict.hemisphere_list[1]['title']}}">
+          <figcaption class="figure-caption text-center">{{mars_dict.hemisphere_list[1]['title']}}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <figure class="figure">
+          <img src="{{mars_dict.hemisphere_list[2]['img_url']}}" class="figure-img img-fluid" alt="{{mars_dict.hemisphere_list[2]['title']}}">
+          <figcaption class="figure-caption text-center">{{mars_dict.hemisphere_list[2]['title']}}</figcaption>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure class="figure">
+          <img src="{{mars_dict.hemisphere_list[3]['img_url']}}" class="figure-img img-fluid" alt="{{mars_dict.hemisphere_list[3]['title']}}">
+          <figcaption class="figure-caption text-center">{{mars_dict.hemisphere_list[3]['title']}}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
